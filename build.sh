@@ -4,6 +4,6 @@ set -o errexit
 
 #poetry install
 
-pip install -r requerements.tt
+#pip install -r requerements.tt
 python manage.py collectstatic --no-input
 python manage.py migrate
