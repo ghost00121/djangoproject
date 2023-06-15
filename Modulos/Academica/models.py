@@ -94,7 +94,7 @@ class Matricula(models.Model):
     ]
     niveles = models.CharField(max_length=2, choices=opciones_niveles, default="B1")
     fechaMatricula = models.DateField()
-    pago= models.CharField(max_length=5)
+    pago= models.CharField(max_length=5,default="100")
 
     def __str__(self):
         txt = "{0}, {1}\t{2}\t{3}\t{4} matriculad{5} en el nivel {6} / Fecha: {7}"
