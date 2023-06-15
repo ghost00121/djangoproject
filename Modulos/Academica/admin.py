@@ -10,7 +10,7 @@ admin.site.register(Nivel, NivelAdmin)
 
 class MatriculaAdmin(admin.ModelAdmin):
     raw_id_fields = ('estudiante',)
-    list_display = ('dni_estudiante', 'nombre_completo_estudiante', 'nombre_idioma', 'estado', 'horario', 'niveles', 'fechaMatricula', 'pago')
+    list_display = ('dni_estudiante', 'nombre_completo_estudiante', 'nombre_idioma', 'estado', 'horario', 'niveles', 'fechaMatricula', 'pago', 'frecuencia')
     search_fields = ('estudiante__dni', 'estudiante__apellidoPaterno', 'estudiante__apellidoMaterno', 'estudiante__nombres', 'pago')
     list_filter = ('horario', 'niveles', 'estudiante__idioma', 'pago')
 
@@ -30,7 +30,12 @@ class MatriculaAdmin(admin.ModelAdmin):
         return "ACTIVO" if obj.estudiante.vigencia else "INACTIVO"
     estado.short_description = 'Estado'
 
+    def frecuencia(self, obj):
+        return obj.horario.frecuencia
+    frecuencia.short_description = 'Frecuencia'
+
 admin.site.register(Matricula, MatriculaAdmin)
+
 
 
 
