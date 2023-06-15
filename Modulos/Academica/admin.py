@@ -9,7 +9,7 @@ class NivelAdmin(admin.ModelAdmin):
 admin.site.register(Nivel, NivelAdmin)
 
 class MatriculaAdmin(admin.ModelAdmin):
-    list_display = ('dni_estudiante', 'nombre_completo_estudiante', 'nombre_idioma', 'estado', 'horario', 'niveles', 'fechaMatricula')
+    list_display = ('dni_estudiante', 'nombre_completo_estudiante', 'nombre_idioma', 'estado', 'horario', 'niveles', 'fechaMatricula', 'pago')
     search_fields = ('estudiante__dni', 'estudiante__apellidoPaterno', 'estudiante__apellidoMaterno', 'estudiante__nombres')
     list_filter = ('horario', 'niveles','estudiante__idioma')
 
