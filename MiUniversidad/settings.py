@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Modulos.Academica',
+    'bootstrap5',
 ]
 
 MIDDLEWARE = [
